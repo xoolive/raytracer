@@ -1,0 +1,19 @@
+# fichier de scene: test1.scn
+# position de l'observateur
+8,0,0
+# un point au centre de l'écran, largeur angulaire, taille de l'écran
+3,0,0,3,4,0,200,200
+# liste des sommets
+4
+-1.0,0,0
+-1.0,3.0,0.0
+-1.0,0.0,3.0
+-1.0,3.0,3.0
+# liste des facettes
+2
+1,2,3,0.3,255,0,0
+2,3,4,0.3,0,255,0
+# couleur de fond
+200,200,200
+# source de lumière
+0,1,1,255,255,255
