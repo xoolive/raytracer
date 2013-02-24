@@ -1,5 +1,5 @@
-Projet de logiciel de rendu d'images 3D par lancer de rayon
-===========================================================
+Projet de logiciel de rendu d'images 3D par lancer de rayons
+============================================================
 
 ### Contenu des dossiers
 
@@ -7,9 +7,13 @@ Projet de logiciel de rendu d'images 3D par lancer de rayon
  - ```include``` contient les fichiers d'en-tête de fonctions ;
  - ```lib``` contient les librairies statiques fournies (compilées pour votre environnement Linux) ;
  - ```scenes``` contient les fichiers de scènes que le logiciel doit savoir lire ;
- - ```src``` contient les fichiers sources écrit en langage C ;
+ - ```src``` contient les fichiers sources écrits en langage C ;
  - ```tests``` contient les fichiers sources en langage C destinés à tester unitairement le code produit ;
  - ```Makefile``` décrit les règles de compilation
+
+Notes :
+ - Parmi les fichiers fournis, seul le fichier ```Makefile``` doit être édité.
+ - Toutes les autres modifications peuvent être faites dans des nouveaux fichiers.
 
 ### Utilisation de github
 
