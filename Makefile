@@ -4,7 +4,7 @@ GCC        = gcc
 CFLAGS     = -Iinclude -Wall
 SDL_CFLAGS = `sdl-config --cflags`
 SDL_LIBS   = `sdl-config --libs`
-LIBS       = # lib/libutil.a $(SDL_LIBS) lib/libimgsdl.a
+LIBS       = # lib/libutil.a lib/libimgsdl.a $(SDL_LIBS)
 
 EXEC       = raytracer
 EXEC_NOTE  = test_note
