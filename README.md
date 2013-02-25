@@ -33,7 +33,7 @@ En cas de problème de connexion réseau, pensez à vérifier le positionnement 
 export http_proxy=proxy.ensta.fr:8080
 ```
 
-**Si vous êtes à l'aise**, et uniquement si vous l'êtes (vous n'aurez ni plus ni moins de points pour cela), vous pouvez utiliser [git](http://git-scm.com/), et les services de [github.com](http://github.com) avec votre propre compte. Vous aurez également la possibilité d'effectuer vos livraisons sous la forme d'un lien vers votre repository github.
+**Si vous êtes à l'aise**, et uniquement si vous l'êtes (vous n'aurez ni plus ni moins de points pour cela), vous pouvez utiliser [git](http://git-scm.com/), et les services de [github.com](http://github.com) en utilisant votre propre compte. Vous aurez également la possibilité d'effectuer vos livraisons sous la forme d'un lien vers votre repository github.
 
 Vous trouverez une explication des commandes à taper pour avoir votre propre
 repository github dans le fichier [github.md](github.md).
