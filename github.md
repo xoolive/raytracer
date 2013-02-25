@@ -24,7 +24,7 @@ Le mot de passe est... votre mot de passe sur github.com
 ```sh
 git status
 git add <les fichiers à ajouter>
-git status (pour vérifier)
+git status # (pour vérifier)
 git commit -m "Un message explicatif des modifications"
 ```
 
@@ -45,9 +45,9 @@ git pull origin master
 ```
 
  - Commandes pour vérifier:
-   # le statut de votre répertoire: ```git status```
-   # votre réglage proxy: ```git config http.proxy```
-   # votre réglage push par défaut: ```git config branch.master.remote``` (on doit reconnaître votre compte)
+   - le statut de votre répertoire: ```git status```
+   - votre réglage proxy: ```git config http.proxy```
+   - votre réglage push par défaut: ```git config branch.master.remote``` (on doit reconnaître votre compte)
 
 
 ### Livraison
