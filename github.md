@@ -12,7 +12,7 @@ _Attention!_ Ceci s'adresse *exclusivement* aux étudiants qui sont à l'aise en
 Pour vous familiariser avec git, vous trouverez un tutoriel ici :
 [http://try.github.com/](http://try.github.com/)
 
- - Pour publier votre code sur github, d'abord, créez un compte, puis depuis votre répertoire raytracer:
+ - Pour publier votre code sur github, d'abord, créez un compte, un repository,  puis depuis votre répertoire raytracer:
 ```sh
 git remote add rendu https://github.com/<votre-repository-github>
 git push -u rendu master
