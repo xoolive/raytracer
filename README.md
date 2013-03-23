@@ -43,7 +43,7 @@ _Attention!_ Mieux vaut une bonne livraison classique qu'une mauvaise livraison
 
 ### Dates et contenu des livraisons
 
- - première livraison intermédiaire : _date à venir_
- - deuxième livraison intermédiaire : _date à venir_
+ - première livraison intermédiaire : le 21 avril avant 22h
+ - deuxième livraison intermédiaire : le 12 mai avant 22h
  - livraison finale : le 31 mai avant 22h
 
