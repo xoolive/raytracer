@@ -19,18 +19,12 @@ Notes :
 
 Ouvrez un terminal dans le répertoire de votre choix et entrez
 ```sh
-git config --global http.proxy proxy.ensta.fr:8080
 git clone https://github.com/xoolive/raytracer.git
 ```
 
 Pour récupérer les modifications sur le serveur du professeur :
 ```sh
 git pull
-```
-
-En cas de problème de connexion réseau, pensez à vérifier le positionnement de votre variable d'environnement $http_proxy:
-```sh
-export http_proxy=proxy.ensta.fr:8080
 ```
 
 **Si vous êtes à l'aise**, et uniquement si vous l'êtes (vous n'aurez ni plus ni moins de points pour cela), vous pouvez utiliser [git](http://git-scm.com/), et les services de [github.com](http://github.com) en utilisant votre propre compte. Vous aurez également la possibilité d'effectuer vos livraisons sous la forme d'un lien vers votre repository github.
