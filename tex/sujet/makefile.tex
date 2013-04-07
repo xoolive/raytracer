@@ -1,0 +1,191 @@
+% xelatex %
+%
+\documentclass[10pt, a4paper ]{article}
+
+\PassOptionsToPackage{usenames, dvipsnames, xetex}{xcolor}
+
+\usepackage[frenchb]{babel}
+\usepackage{fontspec}
+% \pagestyle{empty}
+\usepackage{marvosym}
+\usepackage{dice}
+
+% DOCUMENT LAYOUT
+\usepackage{geometry}
+\geometry{a4paper, textwidth=5.5in, textheight=8.5in, marginparsep=7pt,
+marginparwidth=.6in}
+
+\setlength\parindent{3mm}
+\setlength\parskip{3mm}
+
+% \definecolor{MidnightBlue}{rgb}{0.15,0.30,0.55}
+% \definecolor{BrickRed}{rgb}{0.55,0.15,0.30}
+% \usepackage[usenames,xetex]{color}
+
+% FONTS
+\usepackage{xunicode}
+\usepackage{xltxtra}
+\usepackage{amsmath}
+
+% converts LaTeX specials (``quotes'' --- dashes etc.) to unicode
+\defaultfontfeatures{Mapping=tex-text}
+
+\setromanfont [Ligatures={Common}%, Numbers={OldStyle}
+]{Gentium Basic}
+\setsansfont [Ligatures={Common}, BoldFont={Fontin Sans Bold},
+ItalicFont={Fontin Sans Italic}]{Fontin Sans}
+\setmonofont[Scale=0.8]{Menlo}
+
+% PDF SETUP
+\usepackage[xetex, bookmarks, colorlinks, breaklinks, pdftitle={Rendu d'images
+3D par lancer de rayons}, pdfauthor={Xavier Olive}]{hyperref}
+\hypersetup{linkcolor=MidnightBlue,citecolor=BrickRed,
+filecolor=black,urlcolor=MidnightBlue}
+
+\usepackage{listings}
+\lstdefinestyle{xocode}
+{
+    basicstyle=\footnotesize,% the size of the fonts that are used for the code
+    backgroundcolor=\color{black!10},
+    numberblanklines=false,
+    tabsize=4,
+    keywordstyle=\color{BrickRed},
+    commentstyle={\color{OliveGreen}\itshape},
+    showspaces=false,       % show spaces adding particular underscores
+    showstringspaces=false, % underline spaces within strings
+    showtabs=false,   % show tabs within strings adding particular underscores
+    basicstyle=\ttfamily,
+    fontadjust,
+    frame=single,           % adds a frame around the code
+    framerule=0pt,
+    tabsize=4,              % sets default tabsize to 2 spaces
+    escapeinside={\%*}{*)}  % if you want to add a comment within your code
+}
+
+\title{Rendu d'images 3D par lancer de rayons}
+\begin{document}
+
+
+\noindent
+\textbf{\textsf{\large IN 104 -- Initiation au Makefile }}
+\vskip1mm\hrule%\url{www.xoolive.org}
+
+% \maketitle
+
+\begin{minipage}{.9\textwidth} \sf L'objectif de cette initiation non notée est
+    de prendre en main l'outil Makefile. Si vous n'avez pas le temps de finir
+    cet exercice lors de la séance, il est fortement recommandé de la travailler
+    à la maison pour être à l'aise avec.\\ Il est nécessaire de comprendre le
+    fonctionnement de l'outil Makefile pour avancer correctement lors du projet.
+\end{minipage}
+
+% \tableofcontents
+
+\section{Fonctionnement}
+
+\begin{lstlisting} [style=xocode, language=make]
+# Au début du fichier, on place les assignations de variables qu'on pourra
+# rappeler à l'aide de la command $(...)
+GCC = gcc # choix du compilateur
+
+# Puis on place, les règles de compilation sous la forme
+# cible: dependance
+#     ligne de commande
+# Attention, on doit indenter à l'aide de tabulations et non d'espaces!
+
+compile: fichier1.o
+    $(GCC) fichier1.o -o application
+
+fichier1.o: fichier1.c
+    $(GCC) fichier1.c -c -o fichier1.o
+\end{lstlisting}
+
+\section{Exercices}
+
+\begin{enumerate}
+    \addtolength{\itemsep}{5mm}
+
+    \item Écrire un programme qui prend en paramètres deux entiers et renvoie la
+        somme des deux entiers. Voici un rendu attendu:
+        \texttt{./add 1 2} doit afficher 3.
+        \begin{lstlisting} [style=xocode, language=sh]
+prompt>  ./add 1 2
+1 et 2 font 3.
+prompt>  
+        \end{lstlisting}
+
+    \item Écrire un fichier \texttt{Makefile} avec deux cibles \texttt{compile}
+        (pour la compilation du programme) et \texttt{run} (pour
+        l'exécution)\\Exécuter
+        \begin{lstlisting} [style=xocode, language=sh]
+prompt>  make compile
+prompt>  make run
+        \end{lstlisting}
+
+    \item Modifier votre programme de test avec un commentaire, puis relancer
+        \begin{lstlisting} [style=xocode, language=sh]
+prompt>  make run
+        \end{lstlisting}
+        La compilation a-t-elle lieu?\\
+        Pourquoi? Rajouter une dépendance à la cible \texttt{run}.\\[2mm]
+        À présent, vous devez avoir
+        un fichier \texttt{Makefile} avec une bonne gestion des dépendances.
+
+    \item Écrire une vraie fonction d'addition et la déporter dans un second
+        fichier.\\
+        Compiler les deux fichiers séparément sans édition de lien, puis ensuite
+        faire l'édition de lien séparément:
+        \begin{lstlisting} [style=xocode, language=sh]
+prompt>  gcc -c fichier1.c -o fichier1.o
+prompt>  gcc -c fichier2.c -o fichier2.o
+prompt>  gcc fichier1.o fichier2.o -o add
+        \end{lstlisting}
+
+    \item Créer autant de cibles que nécessaire pour faire réaliser la
+        compilation de la question précédente par le \texttt{Makefile}.
+
+    \item Observez la règle suivante:
+\begin{lstlisting} [style=xocode, language=make]
+%.o: %.c
+    $(GCC) -c %< -o %@
+\end{lstlisting}
+D'après vous, à quoi sert-elle?\\
+Modifier votre Makefile pour le simplifier au maximum grâce à cette règle.
+
+\end{enumerate}
+
+\newpage
+\section{Correction}
+
+On crée un fichier \texttt{test.c}:
+\lstinputlisting[style=xocode, language=c, identifierstyle=\color{MidnightBlue}] {test.c}
+
+et un fichier \texttt{add.c}:
+\begin{lstlisting} [style=xocode, language=c, identifierstyle=\color{MidnightBlue}]
+int add(int a, int b) {
+  return a+b;
+}
+\end{lstlisting}
+
+Le \texttt{Makefile} final pourra ressembler à:
+
+
+
+\begin{lstlisting} [style=xocode, language=make]
+GCC = gcc # choix du compilateur
+
+run: compile
+    ./add 1 2
+
+compile: test.o add.o
+    $(GCC) test.o add.o -o add
+
+# %< correspond au champ dépendances
+# %@ correspond au champ cible
+%.o: %.c
+    $(GCC) -c %< -o %@
+\end{lstlisting}
+
+
+
+\end{document}
