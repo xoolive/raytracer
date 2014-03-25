@@ -1,5 +1,5 @@
 GCC        = gcc
-MACHINE   := $(shell uname -sp | sed 's/[/\ ]/-/g')
+MACHINE   := $(shell uname -sm | sed 's/[/\ ]/-/g')
 CFLAGS     = -Iinclude -Wall
 SDL_CFLAGS = `sdl-config --cflags`
 SDL_LIBS   = `sdl-config --libs`
