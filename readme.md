@@ -19,7 +19,7 @@ Notes :
 
 Ouvrez un terminal dans le répertoire de votre choix et entrez
 ```sh
-git clone https://github.com/xoolive/raytracer.git
+git clone https://github.com/xoolive/edu-raytracer.git
 ```
 
 Pour récupérer les modifications sur le serveur du professeur :
